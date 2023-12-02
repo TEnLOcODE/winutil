@@ -3557,7 +3557,7 @@ $inputXML = '<Window x:Class="WinUtility.MainWindow"
         mc:Ignorable="d"
         Background="{MainBackgroundColor}"
         WindowStartupLocation="CenterScreen"
-        Title="Shaijyy's Windows Utility" Height="800" Width="1200">
+        Title="Shaijyy''s Windows Utility" Height="800" Width="1200">
 
     <Window.Resources>
     <!--Scrollbar Thumbs-->
