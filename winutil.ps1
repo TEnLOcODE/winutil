@@ -7,10 +7,9 @@
 
 <#
 .NOTES
-    Author         : Chris Titus @christitustech
-    Runspace Author: @DeveloperDurp
-    GitHub         : https://github.com/ChrisTitusTech
-    Version        : 23.11.28
+    Author         : Shaijyy - Eitan B. @eitanbil
+    GitHub         : https://github.com/TEnLOcODE
+    Version        : 26.3.0
 #>
 
 Start-Transcript $ENV:TEMP\Winutil.log -Append
@@ -22,7 +21,7 @@ Add-Type -AssemblyName System.Windows.Forms
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
 $sync.PSScriptRoot = $PSScriptRoot
-$sync.version = "23.11.28"
+$sync.version = "26.3.0"
 $sync.configs = @{}
 $sync.ProcessRunning = $false
 
@@ -2140,26 +2139,32 @@ Function Invoke-WPFFormVariables {
     #If ($global:ReadmeDisplay -ne $true) { Write-Host "If you need to reference this display again, run Get-FormVariables" -ForegroundColor Yellow; $global:ReadmeDisplay = $true }
 
 
-    Write-Host ""
-    Write-Host "    CCCCCCCCCCCCCTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT   "
-    Write-Host " CCC::::::::::::CT:::::::::::::::::::::TT:::::::::::::::::::::T   "
-    Write-Host "CC:::::::::::::::CT:::::::::::::::::::::TT:::::::::::::::::::::T  "
-    Write-Host "C:::::CCCCCCCC::::CT:::::TT:::::::TT:::::TT:::::TT:::::::TT:::::T "
-    Write-Host "C:::::C       CCCCCCTTTTTT  T:::::T  TTTTTTTTTTTT  T:::::T  TTTTTT"
-    Write-Host "C:::::C                     T:::::T                T:::::T        "
-    Write-Host "C:::::C                     T:::::T                T:::::T        "
-    Write-Host "C:::::C                     T:::::T                T:::::T        "
-    Write-Host "C:::::C                     T:::::T                T:::::T        "
-    Write-Host "C:::::C                     T:::::T                T:::::T        "
-    Write-Host "C:::::C                     T:::::T                T:::::T        "
-    Write-Host "C:::::C       CCCCCC        T:::::T                T:::::T        "
-    Write-Host "C:::::CCCCCCCC::::C      TT:::::::TT            TT:::::::TT       "
-    Write-Host "CC:::::::::::::::C       T:::::::::T            T:::::::::T       "
-    Write-Host "CCC::::::::::::C         T:::::::::T            T:::::::::T       "
-    Write-Host "  CCCCCCCCCCCCC          TTTTTTTTTTT            TTTTTTTTTTT       "
-    Write-Host ""
-    Write-Host "====Chris Titus Tech====="
-    Write-Host "=====Windows Toolbox====="
+    Write-Host "                                                                                                    "
+    Write-Host "                                :*%#+.                         .*%%#-                               "
+    Write-Host "                               =@@@@@@:                       .@@@@@@+                              "
+    Write-Host "                               +@@@@@@:                       :@@@@@@+                              "
+    Write-Host "                               .+@@@@-.                        :%@@@=.                              "
+    Write-Host "                                                                                                    "
+    Write-Host "                                                                                                    "
+    Write-Host "                               .-#%*-.                                                              "
+    Write-Host "                              .@@@@@@#.                                                             "
+    Write-Host "                              =@@@@@@@:                                                             "
+    Write-Host "                              +@@@@@@%.                                                             "
+    Write-Host "                             .*@@@@@@*                   .:%@@@@*.                                  "
+    Write-Host "                             .#@@@@@@+                  .=@@@@@@@#                                  "
+    Write-Host "                             .#@@@@@@=                 .%@@@@@@@@#                                  "
+    Write-Host "                             :#@@@@@@-                :%@@@@@@@@*.                                  "
+    Write-Host "                             :%@@@@@@-              .+@@@@@@@@@:.                                   "
+    Write-Host "                             :%@@@@@@-            .=@@@@@@@@@#.                                     "
+    Write-Host "                             :%@@@@@@:         .-%@@@@@@@@@@*.                                      "
+    Write-Host "                             .#@@@@@@@@#*+++*#@@@@@@@@@@@@%:                                        "
+    Write-Host "                              =@@@@@@@@@@@@@@@@@@@@@@@@@%-.                                         "
+    Write-Host "                               =@@@@@@@@@@@@@@@@@@@@@@#:                                            "
+    Write-Host "                                .-*%@@@@@@@@@@@@@@@*:.                                              "
+    Write-Host "                                       .:=*###*=.                                                   "
+    Write-Host "                                                                                                    "
+    Write-Host "                                ====Shaijyy's Utility====                                           "
+    Write-Host "                                =====Windows Toolbox=====                                           "
 
     #====DEBUG GUI Elements====
 
@@ -3552,7 +3557,7 @@ $inputXML = '<Window x:Class="WinUtility.MainWindow"
         mc:Ignorable="d"
         Background="{MainBackgroundColor}"
         WindowStartupLocation="CenterScreen"
-        Title="Chris Titus Tech''s Windows Utility" Height="800" Width="1200">
+        Title="Shaijyy's Windows Utility" Height="800" Width="1200">
 
     <Window.Resources>
     <!--Scrollbar Thumbs-->
