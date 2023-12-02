@@ -1499,7 +1499,7 @@ function New-FirstRun {
 	#
 	$desktopPath = "$($env:USERPROFILE)\Desktop"
 	# Specify the target PowerShell command
-	$command = "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command 'irm https://christitus.com/win | iex'"
+	$command = "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command 'irm https://raw.githubusercontent.com/TEnLOcODE/winutil/main/winutil.ps1 | iex'"
 	# Specify the path for the shortcut
 	$shortcutPath = Join-Path $desktopPath 'winutil.lnk'
 	# Create a shell object
@@ -1508,9 +1508,9 @@ function New-FirstRun {
 	# Create a shortcut object
 	$shortcut = $shell.CreateShortcut($shortcutPath)
 
-	if (Test-Path -Path "c:\Windows\cttlogo.png")
+	if (Test-Path -Path "c:\Windows\sutillogo.png")
 	{
-		$shortcut.IconLocation = "c:\Windows\cttlogo.png"
+		$shortcut.IconLocation = "c:\Windows\sutillogo.png"
 	}
 	
 	# Set properties of the shortcut
@@ -1895,7 +1895,7 @@ function Invoke-WPFButton {
     Param ([string]$Button)
 
     # Use this to get the name of the button
-    #[System.Windows.MessageBox]::Show("$Button","Chris Titus Tech's Windows Utility","OK","Info")
+    #[System.Windows.MessageBox]::Show("$Button","Shaijyy's Windows Utility","OK","Info")
 
     Switch -Wildcard ($Button){
 
@@ -2607,22 +2607,22 @@ function Invoke-WPFMicrowin {
 		$desktopDir = "$($scratchDir)\Windows\Users\Default\Desktop"
 		New-Item -ItemType Directory -Force -Path "$desktopDir"
 	    dism /image:$($scratchDir) /set-profilepath:"$($scratchDir)\Windows\Users\Default"
-		$command = "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command 'irm https://christitus.com/win | iex'"
+		$command = "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command 'irm https://raw.githubusercontent.com/TEnLOcODE/winutil/main/winutil.ps1 | iex'"
 		$shortcutPath = "$desktopDir\WinUtil.lnk"
 		$shell = New-Object -ComObject WScript.Shell
 		$shortcut = $shell.CreateShortcut($shortcutPath)
 
-		if (Test-Path -Path "$env:TEMP\cttlogo.png")
+		if (Test-Path -Path "$env:TEMP\sutillogo.png")
 		{
-			$pngPath = "$env:TEMP\cttlogo.png"
-			$icoPath = "$env:TEMP\cttlogo.ico"
+			$pngPath = "$env:TEMP\sutillogo.png"
+			$icoPath = "$env:TEMP\sutillogo.ico"
 			Add-Type -AssemblyName System.Drawing
 			$pngImage = [System.Drawing.Image]::FromFile($pngPath)
 			$pngImage.Save($icoPath, [System.Drawing.Imaging.ImageFormat]::Icon)
 			Write-Host "ICO file created at: $icoPath"
-			Copy-Item "$env:TEMP\cttlogo.png" "$($scratchDir)\Windows\cttlogo.png" -force
-			Copy-Item "$env:TEMP\cttlogo.ico" "$($scratchDir)\cttlogo.ico" -force
-			$shortcut.IconLocation = "c:\cttlogo.ico"
+			Copy-Item "$env:TEMP\sutillogo.png" "$($scratchDir)\Windows\sutillogo.png" -force
+			Copy-Item "$env:TEMP\sutillogo.ico" "$($scratchDir)\sutillogo.ico" -force
+			$shortcut.IconLocation = "c:\sutillogo.ico"
 		}
 
 		$shortcut.TargetPath = "powershell.exe"
@@ -2786,7 +2786,7 @@ function Invoke-WPFMicrowin {
 		Write-Host "| |__/ / |_| | | | ( (/ /    "
 		Write-Host "|_____/ \___/|_| |_|\____)   "
 
-		# Check if the ISO was successfully created - CTT edit
+		# Check if the ISO was successfully created
 		if ($LASTEXITCODE -eq 0) {
 			Write-Host "Done. ISO image is located here: $env:temp\microwin.iso"
 			Write-Host "Performing Cleanup"
@@ -2956,7 +2956,7 @@ function Invoke-WPFShortcut {
     Switch ($ShortcutToAdd) {
         "WinUtil" {
             $SourceExe = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
-            $IRM = 'irm https://christitus.com/win | iex'
+            $IRM = 'irm https://raw.githubusercontent.com/TEnLOcODE/winutil/main/winutil.ps1 | iex'
             $Powershell = '-ExecutionPolicy Bypass -Command "Start-Process powershell.exe -verb runas -ArgumentList'
             $ArgumentsToSourceExe = "$powershell '$IRM'"
             $DestinationName = "WinUtil.lnk"
@@ -3023,7 +3023,7 @@ function Invoke-WPFToggle {
     Param ([string]$Button)
 
     # Use this to get the name of the button
-    #[System.Windows.MessageBox]::Show("$Button","Chris Titus Tech's Windows Utility","OK","Info")
+    #[System.Windows.MessageBox]::Show("$Button","Shaijyy's Windows Utility","OK","Info")
 
     Switch -Wildcard ($Button){
 
@@ -7692,7 +7692,7 @@ $sync.configs.tweaks = '{
   },
   "WPFEssTweaksOO": {
     "InvokeScript": [
-      "curl.exe -s \"https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/ooshutup10_winutil_settings.cfg\" -o $ENV:temp\\ooshutup10.cfg
+      "curl.exe -s \"https://raw.githubusercontent.com/TEnLOcODE/winutil/main/ooshutup10_winutil_settings.cfg\" -o $ENV:temp\\ooshutup10.cfg
        curl.exe -s \"https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe\" -o $ENV:temp\\OOSU10.exe
        Start-Process $ENV:temp\\OOSU10.exe -ArgumentList \"\"\"$ENV:temp\\ooshutup10.cfg\"\" /quiet\"
        "
@@ -7712,7 +7712,7 @@ $sync.configs.tweaks = '{
         "
         #:: Standalone script by AveYo Source: https://raw.githubusercontent.com/AveYo/fox/main/Edge_Removal.bat
 
-        curl.exe -s \"https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/edgeremoval.bat\" -o $ENV:temp\\edgeremoval.bat
+        curl.exe -s \"https://raw.githubusercontent.com/TEnLOcODE/winutil/main/edgeremoval.bat\" -o $ENV:temp\\edgeremoval.bat
         Start-Process $ENV:temp\\edgeremoval.bat
 
         "
@@ -7985,13 +7985,13 @@ $sync.runspace.Open()
 $inputXML = $inputXML -replace 'mc:Ignorable="d"', '' -replace "x:N", 'N' -replace '^<Win.*', '<Window'
 
 if ((Get-WinUtilToggleStatus WPFToggleDarkMode) -eq $True){
-    $ctttheme = 'Matrix'
+    $sutiltheme = 'Matrix'
 }
 Else{
-    $ctttheme = 'Classic'
+    $sutiltheme = 'Classic'
 }
 
-$inputXML = Set-WinUtilUITheme -inputXML $inputXML -themeName $ctttheme
+$inputXML = Set-WinUtilUITheme -inputXML $inputXML -themeName $sutiltheme
 
 [void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
 [xml]$XAML = $inputXML
@@ -8167,7 +8167,7 @@ $sync["Form"].Add_MouseLeftButtonDown({
 $sync["Form"].Add_Loaded({
    
     $downloadUrl = "https://christitus.com/images/logo-full.png"
-    $destinationPath = Join-Path $env:TEMP "cttlogo.png"
+    $destinationPath = Join-Path $env:TEMP "sutillogo.png"
     
     # Check if the file already exists
     if (-not (Test-Path $destinationPath)) {
@@ -8245,7 +8245,7 @@ $sync["CheckboxFilter"].Add_TextChanged({
 
 
 $downloadUrl = "https://christitus.com/images/logo-full.png"
-$destinationPath = Join-Path $env:TEMP "cttlogo.png"
+$destinationPath = Join-Path $env:TEMP "sutillogo.png"
 
 # Check if the file already exists
 if (-not (Test-Path $destinationPath)) {
